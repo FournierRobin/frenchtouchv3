@@ -1,19 +1,19 @@
 import React from 'react'
-import { Text, styled } from '@nextui-org/react'
+import { Text, styled, Image } from '@nextui-org/react'
 
-const Services = () => {
+const Footer = () => {
 	return (
 		<StyledDiv>
 			<Text
 				size={60}
 				css={{
 					textGradient:
-						'45deg, $purple600 -20%, $pink600 100%',
+						'45deg, $yellow600 -20%, $cyan800 100%',
 					paddingRight: '0.2rem',
 				}}
 				h1
 			>
-				Services
+				Footer
 			</Text>
 		</StyledDiv>
 	)
@@ -24,7 +24,7 @@ const StyledDiv = styled('div', {
 	width: '100%',
 	height: '100vh',
 	alignItems: 'center',
-	background: '$blue500',
+	background: '$purple500',
 })
 
-export default Services
+export default Footer

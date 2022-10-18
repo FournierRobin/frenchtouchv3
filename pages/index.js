@@ -4,6 +4,9 @@ import styles from '../styles/Home.module.css'
 import Hero from '../components/Hero'
 import TopNavbar from '../components/TopNavbar'
 import Services from '../components/Services'
+import Quote from '../components/Quote'
+import Portfolio from '../components/Portofolio'
+import Footer from '../components/Footer'
 import {
 	createTheme,
 	styled,
@@ -24,6 +27,9 @@ export default function Home() {
 			<TopNavbar />
 			<Hero />
 			<Services />
+			<Quote />
+			<Portfolio />
+			<Footer />
 		</div>
 	)
 }

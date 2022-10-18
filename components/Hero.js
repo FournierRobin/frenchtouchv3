@@ -3,39 +3,37 @@ import { Text, styled, Image } from '@nextui-org/react'
 
 const Hero = () => {
 	return (
-		<div>
-			<StyledApp>
-				<Overlay>
-					<TextBox>
-						<HeroText
-							css={{
-								paddingRight: '0.2rem',
-							}}
-							size={80}
-							color='#ffffff'
-							h1
-						>
-							Bienvenue
-						</HeroText>
-						<Text color='#ffffff' h2>
-							Want to sell your property faster at top
-							dollar? <br />
-							The French Touch is here for you! <br />
-							From photography to staging, let us transform
-							your House into a Home.
-						</Text>
+		<StyledApp>
+			<Overlay>
+				<TextBox>
+					<HeroText
+						css={{
+							paddingRight: '0.rem',
+						}}
+						size={80}
+						color='#ffffff'
+						h1
+					>
+						Bienvenue
+					</HeroText>
+					<Text color='#ffffff' h2>
+						Want to sell your property faster at top dollar?{' '}
+						<br />
+						The French Touch is here for you! <br />
+						From photography to staging, let us transform
+						your House into a Home.
+					</Text>
 
-						<Text color='#ffffff' h4>
-							We, Nausicaa and Morgane, two French natives
-							living in Texas,
-							<br /> will bring to your home the casual
-							elegance but never ostentatious of the French
-							touch.
-						</Text>
-					</TextBox>
-				</Overlay>
-			</StyledApp>
-		</div>
+					<Text color='#ffffff' h4>
+						We, Nausicaa and Morgane, two French natives
+						living in Texas,
+						<br /> will bring to your home the casual
+						elegance but never ostentatious of the French
+						touch.
+					</Text>
+				</TextBox>
+			</Overlay>
+		</StyledApp>
 	)
 }
 
@@ -61,7 +59,8 @@ const Overlay = styled('div', {
 })
 
 const HeroText = styled(Text, {
-	textGradient: '45deg, $blue500 -20%, $blue200 50%',
+	textGradient: '45deg, $blue500 -20%, $blue900 60%',
+	paddingRight: '0.2rem',
 })
 
 const TextBox = styled('div', {

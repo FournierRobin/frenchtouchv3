@@ -10,27 +10,35 @@ import {
 const TopNavbar = () => {
 	return (
 		<LayoutNavbar>
-			<Navbar
-				css={{
-					maxWidth: 'xl',
-					opacity: '0.9',
-					backgroundColor: '$blue500',
-				}}
-				isBordered
-				variant='static'
-			>
-				<Navbar.Brand>THE FRENCH TOUCH</Navbar.Brand>
-				<Navbar.Content hideIn='xs'>
-					<Navbar.Link href='#'>Features</Navbar.Link>
+			<StyledNavbar isBordered variant='sticky'>
+				<Navbar.Brand>
+					<Text b color='inherit' hideIn='xs'>
+						THE FRENCH TOUCH
+					</Text>
+				</Navbar.Brand>
+				<Navbar.Content
+					color='$blue600'
+					hideIn='xs'
+					variant='highlight-solid'
+				>
+					<Navbar.Link href='#'>Portfolio</Navbar.Link>
+					<Navbar.Link isActive href='#'>
+						Services
+					</Navbar.Link>
+					<Navbar.Link href='#'>Contact Us</Navbar.Link>
 				</Navbar.Content>
-			</Navbar>
+				<Navbar.Content></Navbar.Content>
+			</StyledNavbar>
 		</LayoutNavbar>
 	)
 }
 
+const StyledNavbar = styled(Navbar, {
+	maxWidth: 'xl',
+})
+
 const LayoutNavbar = styled('div', {
 	position: 'fixed',
-	height: '4em',
 	width: '100vw',
 	zIndex: '100',
 })
