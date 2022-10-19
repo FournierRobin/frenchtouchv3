@@ -1,14 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Hero from '../components/Hero'
 import TopNavbar from '../components/TopNavbar'
 import Services from '../components/Services'
 import Quote from '../components/Quote'
 import Portfolio from '../components/Portfolio'
 import Footer from '../components/Footer'
-import ServiceCard from '../components/portfolio/ServiceCard'
 import { useState, useEffect, useRef } from 'react'
-import { Text, styled } from '@nextui-org/react'
+import { styled } from '@nextui-org/react'
 
 export default function Home() {
 	const homeRef = useRef()

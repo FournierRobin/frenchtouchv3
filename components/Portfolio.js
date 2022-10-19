@@ -1,11 +1,20 @@
 import React from 'react'
-import { Text, styled, Image } from '@nextui-org/react'
-import ServiceCard from './portfolio/ServiceCard'
+import { Text, styled } from '@nextui-org/react'
 
 const Portfolio = ({ portfolioRef }) => {
 	return (
 		<StyledDiv ref={portfolioRef} id='Portfolio'>
-			<ServiceCard />
+			<Text
+				size={60}
+				css={{
+					textGradient:
+						'45deg, $yellow600 -20%, $red800 100%',
+					paddingRight: '0.2rem',
+				}}
+				h1
+			>
+				Portfolio
+			</Text>
 		</StyledDiv>
 	)
 }
@@ -15,7 +24,7 @@ const StyledDiv = styled('div', {
 	width: '100%',
 	height: '100vh',
 	alignItems: 'center',
-	background: '$yellow500',
+	background: '$yellow800',
 })
 
 export default Portfolio

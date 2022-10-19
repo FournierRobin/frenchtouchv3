@@ -24,7 +24,7 @@ const TopNavbar = ({ activeSection }) => {
 					</Text>
 				</Navbar.Brand>
 				<Navbar.Content
-					/* enableCursorHighlight */
+					enableCursorHighlight
 					css={{
 						gap: '20px',
 					}}
