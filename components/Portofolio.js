@@ -1,14 +1,14 @@
 import React from 'react'
 import { Text, styled, Image } from '@nextui-org/react'
 
-const Portfolio = () => {
+const Portfolio = ({ portfolioRef }) => {
 	return (
-		<StyledDiv>
+		<StyledDiv ref={portfolioRef} id='Portfolio'>
 			<Text
 				size={60}
 				css={{
 					textGradient:
-						'45deg, $green600 -20%, $red800 100%',
+						'45deg, $green700 -20%, $red600 100%',
 					paddingRight: '0.2rem',
 				}}
 				h1

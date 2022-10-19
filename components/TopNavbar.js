@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import {
 	Navbar,
 	Button,
@@ -7,25 +8,42 @@ import {
 	styled,
 } from '@nextui-org/react'
 
-const TopNavbar = () => {
+const section = [
+	{ name: 'Home', href: '#Home' },
+	{ name: 'Portfolio', href: '#Portfolio' },
+	{ name: 'Services', href: '#Services' },
+	{ name: 'Quote', href: '#Quote' },
+]
+const TopNavbar = ({ activeSection }) => {
 	return (
 		<LayoutNavbar>
-			<StyledNavbar isBordered variant='sticky'>
+			<StyledNavbar isBordered='true' variant='sticky'>
 				<Navbar.Brand>
 					<Text b color='inherit' hideIn='xs'>
 						THE FRENCH TOUCH
 					</Text>
 				</Navbar.Brand>
 				<Navbar.Content
-					color='$blue600'
+					enableCursorHighlight
+					css={{
+						gap: '20px',
+					}}
 					hideIn='xs'
 					variant='highlight-solid'
+					activeColor='neutral'
 				>
-					<Navbar.Link href='#'>Portfolio</Navbar.Link>
-					<Navbar.Link isActive href='#'>
-						Services
-					</Navbar.Link>
-					<Navbar.Link href='#'>Contact Us</Navbar.Link>
+					{section.map((page) => {
+						let isActive = activeSection == page.name
+						return (
+							<Navbar.Link
+								isActive={isActive}
+								key={page.name}
+								href={page.href}
+							>
+								{page.name}
+							</Navbar.Link>
+						)
+					})}
 				</Navbar.Content>
 				<Navbar.Content></Navbar.Content>
 			</StyledNavbar>

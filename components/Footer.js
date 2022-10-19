@@ -22,7 +22,7 @@ const Footer = () => {
 const StyledDiv = styled('div', {
 	dflex: 'center',
 	width: '100%',
-	height: '100vh',
+	height: '40vh',
 	alignItems: 'center',
 	background: '$purple500',
 })

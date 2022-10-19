@@ -1,9 +1,10 @@
 import React from 'react'
+import { useRef } from 'react'
 import { Text, styled } from '@nextui-org/react'
 
-const Services = () => {
+const Services = ({ servicesRef }) => {
 	return (
-		<StyledDiv>
+		<StyledDiv ref={servicesRef} id='Services'>
 			<Text
 				size={60}
 				css={{

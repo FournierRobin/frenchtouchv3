@@ -1,14 +1,14 @@
 import React from 'react'
 import { Text, styled, Image } from '@nextui-org/react'
 
-const Quote = () => {
+const Quote = ({ quoteRef }) => {
 	return (
-		<StyledDiv>
+		<StyledDiv ref={quoteRef} id='Quote'>
 			<Text
 				size={60}
 				css={{
 					textGradient:
-						'45deg, $cyan600 -20%, $red800 100%',
+						'45deg, $yellow600 -20%, $red800 100%',
 					paddingRight: '0.2rem',
 				}}
 				h1
