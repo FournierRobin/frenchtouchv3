@@ -3,6 +3,7 @@ import {
 	NextUIProvider,
 	createTheme,
 } from '@nextui-org/react'
+import styles from '../styles/globals.css'
 
 const theme = createTheme({
 	type: 'dark',
@@ -16,7 +17,7 @@ const theme = createTheme({
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<NextUIProvider theme={theme}>
+		<NextUIProvider theme={theme} style={styles}>
 			<Component {...pageProps} />
 		</NextUIProvider>
 	)
