@@ -10,18 +10,18 @@ import { styled } from '@nextui-org/react'
 
 export default function Home() {
 	const homeRef = useRef()
-	const portfolioRef = useRef()
+	/* const portfolioRef = useRef() */
 	const servicesRef = useRef()
 	const quoteRef = useRef()
 
 	const [yHome, setYhome] = useState()
-	const [yPort, setYport] = useState()
+	/* const [yPort, setYport] = useState() */
 	const [yServ, setYserv] = useState()
 	const [yQuote, setYquote] = useState()
 
 	const getPosition = () => {
 		setYhome(homeRef.current.offsetTop)
-		setYport(portfolioRef.current.offsetTop)
+		/* setYport(portfolioRef.current.offsetTop) */
 		setYserv(servicesRef.current.offsetTop)
 		setYquote(quoteRef.current.offsetTop)
 	}
@@ -36,10 +36,10 @@ export default function Home() {
 
 		const handleSectionActive = () => {
 			let position = window.scrollY + 1
-			if (position >= yHome && position < yPort) {
+			if (position >= yHome && position < yServ) {
 				setActiveSection('Home')
-			} else if (position >= yPort && position < yServ) {
-				setActiveSection('Portfolio')
+				/* } else if (position >= yPort && position < yServ) {
+				setActiveSection('Portfolio') */
 			} else if (position >= yServ && position < yQuote) {
 				setActiveSection('Services')
 			} else if (position >= yQuote) {
@@ -61,7 +61,7 @@ export default function Home() {
 				handleSectionActive
 			)
 		}
-	}, [setActiveSection, yHome, yPort, yServ, yQuote])
+	}, [setActiveSection, yHome /* yPort */, , yServ, yQuote])
 
 	return (
 		<Layout>
@@ -71,7 +71,7 @@ export default function Home() {
 			</Head>
 			<TopNavbar activeSection={activeSection} />
 			<Hero homeRef={homeRef} />
-			<Portfolio portfolioRef={portfolioRef} />
+			{/* <Portfolio portfolioRef={portfolioRef} /> */}
 			<Services servicesRef={servicesRef} />
 			<Quote quoteRef={quoteRef} />
 			<Footer />

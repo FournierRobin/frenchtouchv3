@@ -10,7 +10,7 @@ import {
 
 const section = [
 	{ name: 'Home', href: '#Home' },
-	{ name: 'Portfolio', href: '#Portfolio' },
+	/* { name: 'Portfolio', href: '#Portfolio' }, */
 	{ name: 'Services', href: '#Services' },
 	{ name: 'Quote', href: '#Quote' },
 ]
@@ -26,7 +26,7 @@ const TopNavbar = ({ activeSection }) => {
 				<Navbar.Content
 					enableCursorHighlight
 					css={{
-						gap: '20px',
+						gap: '3rem',
 					}}
 					hideIn='xs'
 					variant='underline-rounded'
