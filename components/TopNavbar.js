@@ -17,7 +17,11 @@ const section = [
 const TopNavbar = ({ activeSection }) => {
 	return (
 		<LayoutNavbar>
-			<StyledNavbar isBordered='true' variant='sticky'>
+			<StyledNavbar
+				shouldHideOnScroll
+				isBordered='true'
+				variant='sticky'
+			>
 				<Navbar.Brand>
 					<Text b color='inherit' hideIn='xs'>
 						THE FRENCH TOUCH
@@ -52,7 +56,7 @@ const TopNavbar = ({ activeSection }) => {
 }
 
 const StyledNavbar = styled(Navbar, {
-	maxWidth: 'xl',
+	/* maxWidth: 'xl', */
 })
 
 const LayoutNavbar = styled('div', {

@@ -5,6 +5,7 @@ import Services from '../components/Services'
 import Quote from '../components/Quote'
 import Portfolio from '../components/Portfolio'
 import Footer from '../components/Footer'
+import Flask from '../components/Flask'
 import { useState, useEffect, useRef } from 'react'
 import { styled } from '@nextui-org/react'
 

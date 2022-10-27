@@ -1,7 +1,10 @@
 import React from 'react'
-import { useRef } from 'react'
+import { useEffect } from 'react'
 import { Text, styled, Grid, Card } from '@nextui-org/react'
 import ServiceCard from './portfolio/ServiceCard'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const servicesList = [
 	{
@@ -35,12 +38,20 @@ const servicesList = [
 ]
 
 const Services = ({ servicesRef }) => {
+	useEffect(() => {
+		AOS.init()
+	}, [])
 	return (
 		<StyledDiv ref={servicesRef} id='Services'>
 			<Text css={{ marginTop: '2rem' }} h1>
 				Our Services
 			</Text>
-			<StyledGridContainer gap={5} justify='center'>
+			<StyledGridContainer
+				data-aos='zoom-out-left'
+				data-aos-duration='1500'
+				gap={10}
+				justify='center'
+			>
 				{servicesList.map((service) => {
 					return (
 						<Grid key={service.name} xs={6}>

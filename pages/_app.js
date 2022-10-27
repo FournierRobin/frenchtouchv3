@@ -4,13 +4,15 @@ import {
 	createTheme,
 } from '@nextui-org/react'
 import styles from '../styles/globals.css'
+import '../styles/card.css'
 
 const theme = createTheme({
 	type: 'dark',
 	theme: {
-		breakpoints: {
-			lg: '4000px',
-			xl: '4000px',
+		fonts: {
+			sans: 'Libre Baskerville',
+			/* Bienvenue: 'Playfair Display',
+			Reste: 'Palanquin', */
 		},
 	},
 })

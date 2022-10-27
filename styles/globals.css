@@ -5,6 +5,10 @@ body {
     scroll-behavior: smooth;    
 }
 
+.nextui-navbar-container {
+  max-width: 100% !important;
+}
+
 
 a {
   color: inherit;

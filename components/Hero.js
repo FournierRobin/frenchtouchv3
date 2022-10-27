@@ -8,9 +8,9 @@ const Hero = ({ homeRef }) => {
 				<TextBox>
 					<HeroText
 						css={{
-							paddingRight: '0.rem',
+							paddingRight: '0.2rem',
 						}}
-						size={80}
+						size='$7xl'
 						color='#ffffff'
 						h1
 					>

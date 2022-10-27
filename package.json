@@ -6,16 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start-api": "cd api && apivenv/bin/flask run"
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.10",
+    "@sendgrid/mail": "^7.7.0",
+    "aos": "^2.3.4",
     "next": "12.3.1",
     "react": "18.2.0",
+    "react-aria": "^3.20.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1"
-  }
+  },
+  "proxy": "http://127.0.0.1:5000"
 }

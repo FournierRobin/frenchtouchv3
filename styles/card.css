@@ -1,0 +1,31 @@
+.flip-card {
+    background-color: transparent;
+    width: 40em;
+    height: 20em;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute !important; 
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-backface-visibility: hidden !important; /* Safari */
+    backface-visibility: hidden !important;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg) !important;
+  }

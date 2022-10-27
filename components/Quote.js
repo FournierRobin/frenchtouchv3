@@ -1,20 +1,63 @@
 import React from 'react'
-import { Text, styled, Image } from '@nextui-org/react'
+import { useState } from 'react'
+import {
+	Textarea,
+	Button,
+	styled,
+	Input,
+	Spacer,
+} from '@nextui-org/react'
 
 const Quote = ({ quoteRef }) => {
+	const [quoteForm, setQuoteForm] = useState({
+		part1: '',
+		part2: '',
+	})
+
+	const handleChange = (event) => {
+		setQuoteForm({
+			...quoteForm,
+			[event.target.name]: event.target.value,
+		})
+	}
+
+	const sendForm = (event) => {
+		event.preventDefault()
+		console.log(quoteForm)
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(quoteForm),
+		}
+		fetch('/mail', requestOptions).then((data) => {
+			/* console.log(data) */
+		})
+	}
+
 	return (
 		<StyledDiv ref={quoteRef} id='Quote'>
-			<Text
-				size={60}
-				css={{
-					textGradient:
-						'45deg, $yellow600 -20%, $red800 100%',
-					paddingRight: '0.2rem',
-				}}
-				h1
-			>
-				Quote
-			</Text>
+			<form onSubmit={sendForm}>
+				<Input
+					underlined
+					labelPlaceholder='First part'
+					name='part1'
+					value={quoteForm.part1}
+					onChange={handleChange}
+				/>
+				<Spacer y={1.5} />
+				<Input
+					underlined
+					labelPlaceholder='Second part'
+					name='part2'
+					value={quoteForm.part2}
+					onChange={handleChange}
+				/>
+				<Spacer y={1.5} />
+				<Button auto type='submit'>
+					Send Message
+				</Button>
+			</form>
 		</StyledDiv>
 	)
 }
