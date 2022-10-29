@@ -43,7 +43,10 @@ const Services = ({ servicesRef }) => {
 	}, [])
 	return (
 		<StyledDiv ref={servicesRef} id='Services'>
-			<Text css={{ marginTop: '2rem' }} h1>
+			<Text
+				css={{ marginTop: '2rem', color: '$cyan700' }}
+				h1
+			>
 				Our Services
 			</Text>
 			<StyledGridContainer
@@ -76,7 +79,7 @@ const StyledDiv = styled('div', {
 	height: '150vh',
 	padding: '4rem',
 	alignItems: 'center',
-	background: '$blue300',
+	background: '$yellow900',
 	flexDirection: 'column',
 })
 

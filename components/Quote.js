@@ -6,15 +6,68 @@ import {
 	styled,
 	Input,
 	Spacer,
+	Dropdown,
 } from '@nextui-org/react'
+
+const typeOfServicesList = [
+	{ key: 'Home Staging and Photos/Videos' },
+	{ key: 'Home Staging' },
+	{ key: 'Photos and/or Videos' },
+	{ key: 'Interior redesign stylist and Photos/Videos' },
+	{ key: 'Interior redesign stylist ' },
+]
+
+const jobList = [
+	{ key: 'Realtor' },
+	{ key: 'Home Owner' },
+	{ key: 'Investor' },
+	{ key: 'Home Builder' },
+	{ key: 'Other' },
+]
+
+const quoteListP1 = [
+	{ key: 'familyName', placeholder: 'Full Name' },
+	{ key: 'email', placeholder: 'E-Mail' },
+	{ key: 'phoneNumber', placeholder: 'Phone Number' },
+]
+
+const quoteListP2 = [
+	{ key: 'propertyAdress', placeholder: 'Property Adress' },
+	{
+		key: 'estimatedListPrice',
+		placeholder: 'Estimated List Price',
+	},
+	{
+		key: 'approximateSqftHome',
+		placeholder: 'Approximate Square Footage of the Home',
+	},
+	{
+		key: 'timelineDeadline',
+		placeholder:
+			'Timeline To Have Project/Staging Completed By',
+	},
+	{
+		key: 'moreAboutProject',
+		placeholder: 'Tell Us More About Your Project',
+	},
+]
 
 const Quote = ({ quoteRef }) => {
 	const [quoteForm, setQuoteForm] = useState({
-		part1: '',
-		part2: '',
+		familyName: '',
+		email: '',
+		phoneNumber: '',
+		typeOfServices: 'Home Staging & Photos/Videos',
+		jobList: 'Realtor',
+		propertyAdress: '',
+		estimatedListPrice: '',
+		approximateSqftHome: '',
+		timelineDeadline: '',
+		moreAboutProject: '',
 	})
 
 	const handleChange = (event) => {
+		/* console.log(event.target.name) */
 		setQuoteForm({
 			...quoteForm,
 			[event.target.name]: event.target.value,
@@ -23,7 +76,7 @@ const Quote = ({ quoteRef }) => {
 
 	const sendForm = (event) => {
 		event.preventDefault()
-		console.log(quoteForm)
+		/* console.log(quoteForm) */
 
 		const requestOptions = {
 			method: 'POST',
@@ -38,24 +91,109 @@ const Quote = ({ quoteRef }) => {
 	return (
 		<StyledDiv ref={quoteRef} id='Quote'>
 			<form onSubmit={sendForm}>
-				<Input
-					underlined
-					labelPlaceholder='First part'
-					name='part1'
-					value={quoteForm.part1}
-					onChange={handleChange}
-				/>
+				{quoteListP1.map((element) => {
+					return (
+						<div key={element.key}>
+							<Input
+								underlined
+								labelPlaceholder={element.placeholder}
+								name={element.key}
+								value={quoteForm[element.key]}
+								onChange={handleChange}
+							/>
+							<Spacer y={1.5} />
+						</div>
+					)
+				})}
+
+				<Dropdown>
+					<Dropdown.Button
+						light
+						flat
+						css={{ tt: 'capitalize' }}
+					>
+						{quoteForm.typeOfServices}
+					</Dropdown.Button>
+					<Dropdown.Menu
+						aria-label='Single selection actions'
+						color='secondary'
+						disallowEmptySelection
+						selectionMode='single'
+						name='typeOfServices'
+						selectedKeys={quoteForm.typeOfServices}
+						onSelectionChange={(event) =>
+							setQuoteForm({
+								...quoteForm,
+								['typeOfServices']: event.anchorKey,
+							})
+						}
+					>
+						{typeOfServicesList.map((service) => {
+							return (
+								<Dropdown.Item
+									key={service.key}
+									withDivider
+								>
+									{service.key}
+								</Dropdown.Item>
+							)
+						})}
+					</Dropdown.Menu>
+				</Dropdown>
 				<Spacer y={1.5} />
-				<Input
-					underlined
-					labelPlaceholder='Second part'
-					name='part2'
-					value={quoteForm.part2}
-					onChange={handleChange}
-				/>
+
+				<Dropdown>
+					<Dropdown.Button
+						light
+						flat
+						css={{ tt: 'capitalize' }}
+					>
+						{quoteForm.jobList}
+					</Dropdown.Button>
+					<Dropdown.Menu
+						aria-label='Single selection actions'
+						color='secondary'
+						disallowEmptySelection
+						selectionMode='single'
+						name='jobList'
+						selectedKeys={quoteForm.jobList}
+						onSelectionChange={(event) =>
+							setQuoteForm({
+								...quoteForm,
+								['jobList']: event.anchorKey,
+							})
+						}
+					>
+						{jobList.map((service) => {
+							return (
+								<Dropdown.Item
+									key={service.key}
+									withDivider
+								>
+									{service.key}
+								</Dropdown.Item>
+							)
+						})}
+					</Dropdown.Menu>
+				</Dropdown>
 				<Spacer y={1.5} />
+
+				{quoteListP2.map((element) => {
+					return (
+						<div key={element.key}>
+							<Input
+								underlined
+								labelPlaceholder={element.placeholder}
+								name={element.key}
+								value={quoteForm[element.key]}
+								onChange={handleChange}
+							/>
+							<Spacer y={1.5} />
+						</div>
+					)
+				})}
 				<Button auto type='submit'>
-					Send Message
+					Submit Quote
 				</Button>
 			</form>
 		</StyledDiv>
@@ -65,7 +203,7 @@ const Quote = ({ quoteRef }) => {
 const StyledDiv = styled('div', {
 	dflex: 'center',
 	width: '100%',
-	height: '100vh',
+	/* height: '100vh', */
 	alignItems: 'center',
 	background: '$green500',
 })
