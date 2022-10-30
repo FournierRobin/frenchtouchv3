@@ -22,6 +22,14 @@ mail = Mail(app)
 
 
 def format_mail(msg_body):
+    addPhotos = ''
+    if msg_body['addPhotos'] and (msg_body['typeOfServices'] == 'Photos And/Or Videos'):
+        addPhotos = "No"
+    elif msg_body['addPhotos']:
+        addPhotos = "Yes"
+    else:
+        addPhotos = "No"
+
     html = f"""\
     <html>
     <head></head>
@@ -32,6 +40,7 @@ def format_mail(msg_body):
         <p><b>Email : </b>{msg_body['email']}</p>
         <p><b>Phone number : </b>{msg_body['phoneNumber']}</p>
         <p><b>Type of service : </b>{msg_body['typeOfServices']}</p>
+        <p><b>With Photos/Videos : </b>{addPhotos}</p>
         <p><b>Job : </b>{msg_body['jobList']}</p>
         <p><b>Property Address : </b>{msg_body['propertyAdress']}</p>
         <p><b>Estimated List Price : </b>{msg_body['estimatedListPrice']} $</p>

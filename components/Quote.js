@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import {
-	Textarea,
+	Checkbox,
 	Button,
 	styled,
 	Input,
@@ -10,11 +10,9 @@ import {
 } from '@nextui-org/react'
 
 const typeOfServicesList = [
-	{ key: 'Home Staging and Photos/Videos' },
 	{ key: 'Home Staging' },
-	{ key: 'Photos and/or Videos' },
-	{ key: 'Interior redesign stylist and Photos/Videos' },
-	{ key: 'Interior redesign stylist ' },
+	{ key: 'Interior Redesign Stylist ' },
+	{ key: 'Photos And/Or Videos' },
 ]
 
 const jobList = [
@@ -57,8 +55,9 @@ const Quote = ({ quoteRef }) => {
 		familyName: '',
 		email: '',
 		phoneNumber: '',
-		typeOfServices: 'Home Staging & Photos/Videos',
+		typeOfServices: 'Home Staging',
 		jobList: 'Realtor',
+		addPhotos: '',
 		propertyAdress: '',
 		estimatedListPrice: '',
 		approximateSqftHome: '',
@@ -67,7 +66,6 @@ const Quote = ({ quoteRef }) => {
 	})
 
 	const handleChange = (event) => {
-		/* console.log(event.target.name) */
 		setQuoteForm({
 			...quoteForm,
 			[event.target.name]: event.target.value,
@@ -76,8 +74,6 @@ const Quote = ({ quoteRef }) => {
 
 	const sendForm = (event) => {
 		event.preventDefault()
-		/* console.log(quoteForm) */
-
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -105,13 +101,8 @@ const Quote = ({ quoteRef }) => {
 						</div>
 					)
 				})}
-
 				<Dropdown>
-					<Dropdown.Button
-						light
-						flat
-						css={{ tt: 'capitalize' }}
-					>
+					<Dropdown.Button light flat>
 						{quoteForm.typeOfServices}
 					</Dropdown.Button>
 					<Dropdown.Menu
@@ -142,12 +133,26 @@ const Quote = ({ quoteRef }) => {
 				</Dropdown>
 				<Spacer y={1.5} />
 
+				<Checkbox
+					isDisabled={
+						quoteForm.typeOfServices ==
+						'Photos And/Or Videos'
+					}
+					defaultSelected={quoteForm.addPhotos}
+					size='xs'
+					onChange={(event) =>
+						setQuoteForm({
+							...quoteForm,
+							['addPhotos']: event,
+						})
+					}
+				>
+					Add Photos and Videos
+				</Checkbox>
+				<Spacer y={1.5} />
+
 				<Dropdown>
-					<Dropdown.Button
-						light
-						flat
-						css={{ tt: 'capitalize' }}
-					>
+					<Dropdown.Button light flat>
 						{quoteForm.jobList}
 					</Dropdown.Button>
 					<Dropdown.Menu

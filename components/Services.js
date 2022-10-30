@@ -1,19 +1,17 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { Text, styled, Grid, Card } from '@nextui-org/react'
+import { useEffect, useState } from 'react'
+import {
+	Text,
+	styled,
+	Grid,
+	Button,
+} from '@nextui-org/react'
 import ServiceCard from './portfolio/ServiceCard'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const servicesList = [
-	{
-		name: 'Home Staging & Photos/Videos',
-		description:
-			'With professional home staging you can transform your house into a home from the moment the potential buyer steps in. This package includes consultation, staging, photos and videos with our professional photographer. This service is for vacant and model home.',
-		price: '$2000+',
-		photoSrc: '/images/buffet.png',
-	},
 	{
 		name: 'Home Staging',
 		description:
@@ -41,6 +39,7 @@ const Services = ({ servicesRef }) => {
 	useEffect(() => {
 		AOS.init()
 	}, [])
+
 	return (
 		<StyledDiv ref={servicesRef} id='Services'>
 			<Text

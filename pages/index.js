@@ -30,6 +30,8 @@ export default function Home() {
 	const [scrollY, setScrollY] = useState(0)
 	const [activeSection, setActiveSection] = useState('Home')
 
+	const [serviceClicked, setServiceClicked] = useState('')
+
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrollY(window.scrollY)
@@ -62,7 +64,7 @@ export default function Home() {
 				handleSectionActive
 			)
 		}
-	}, [setActiveSection, yHome /* yPort */, , yServ, yQuote])
+	}, [setActiveSection, yHome, yServ, yQuote])
 
 	return (
 		<Layout>

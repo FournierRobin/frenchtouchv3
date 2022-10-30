@@ -1,12 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import {
-	Navbar,
-	Button,
-	Link,
-	Text,
-	styled,
-} from '@nextui-org/react'
+import { Navbar, Text, styled } from '@nextui-org/react'
 
 const section = [
 	{ name: 'Home', href: '#Home' },
@@ -17,11 +10,7 @@ const section = [
 const TopNavbar = ({ activeSection }) => {
 	return (
 		<LayoutNavbar>
-			<StyledNavbar
-				shouldHideOnScroll
-				isBordered='true'
-				variant='sticky'
-			>
+			<StyledNavbar isBordered='true' variant='sticky'>
 				<Navbar.Brand>
 					<Text b color='inherit' hideIn='xs'>
 						THE FRENCH TOUCH
