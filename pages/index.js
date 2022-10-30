@@ -5,8 +5,9 @@ import Services from '../components/Services'
 import Quote from '../components/Quote'
 /* import Portfolio from '../components/Portfolio' */
 import Footer from '../components/Footer'
+import ModalMail from '../components/ModalMail'
 import { useState, useEffect, useRef } from 'react'
-import { styled } from '@nextui-org/react'
+import { styled, Button, Modal } from '@nextui-org/react'
 
 export default function Home() {
 	const homeRef = useRef()
@@ -20,7 +21,7 @@ export default function Home() {
 	const [yQuote, setYquote] = useState()
 
 	const getPosition = () => {
-		setYhome(homeRef.current.offsetTop)
+		setYhome(0)
 		/* setYport(portfolioRef.current.offsetTop) */
 		setYserv(servicesRef.current.offsetTop)
 		setYquote(quoteRef.current.offsetTop)
@@ -66,6 +67,11 @@ export default function Home() {
 		}
 	}, [setActiveSection, yHome, yServ, yQuote])
 
+	const [mailModalVisible, setMailModalVisible] =
+		useState(false)
+	const openModalHandler = () => setMailModalVisible(true)
+	const closeModalHandler = () => setMailModalVisible(false)
+
 	return (
 		<Layout>
 			<Head>
@@ -79,6 +85,7 @@ export default function Home() {
 				servicesRef={servicesRef}
 				setServiceClicked={setServiceClicked}
 			/>
+			<ModalMail />
 			<Quote
 				quoteRef={quoteRef}
 				serviceClicked={serviceClicked}

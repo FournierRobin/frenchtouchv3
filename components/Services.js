@@ -6,7 +6,7 @@ import {
 	Grid,
 	Button,
 } from '@nextui-org/react'
-import ServiceCard from './portfolio/ServiceCard'
+import ServiceCard from './services/ServiceCard'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'

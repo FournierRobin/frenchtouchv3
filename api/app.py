@@ -53,11 +53,29 @@ def format_mail(msg_body):
     return html
 
 
-@app.route('/recup')
-def recup_data():
-    data1 = request.form.get('test_text_next')
-    print(data1)
-    return {'data': data1}
+def format_quickmail(msg_body):
+    html = f"""\
+    <html>
+    <head></head>
+    <body>
+        <h3>You have a new quick message from {msg_body['email']}</h3><br>
+        <p><b>Message : </b>{msg_body['message']}</p>
+    </body>
+    </html>
+    """
+    return html
+
+
+@app.route('/quickmail', methods=['POST'])
+def send_quickmail():
+    body = request.json
+    mail_content = format_quickmail(body)
+    with app.app_context():
+        msg = Message(subject="New Quick Message Mail", sender=app.config.get("MAIL_USERNAME"),
+                      recipients=["flusty0998@gmail.com"])
+        msg.html = mail_content
+        mail.send(msg)
+    return {'test': 'cest envoye'}
 
 
 @app.route('/mail', methods=['POST'])

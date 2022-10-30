@@ -1,5 +1,10 @@
 import React from 'react'
-import { Navbar, Text, styled } from '@nextui-org/react'
+import {
+	Navbar,
+	Text,
+	styled,
+	Link,
+} from '@nextui-org/react'
 
 const section = [
 	{ name: 'Home', href: '#Home' },
@@ -11,11 +16,13 @@ const TopNavbar = ({ activeSection }) => {
 	return (
 		<LayoutNavbar>
 			<StyledNavbar isBordered='true' variant='sticky'>
-				<Navbar.Brand>
-					<Text b color='inherit' hideIn='xs'>
-						THE FRENCH TOUCH
-					</Text>
-				</Navbar.Brand>
+				<Link href='#Home'>
+					<Navbar.Brand>
+						<Text b color='default' hideIn='xs'>
+							THE FRENCH TOUCH
+						</Text>
+					</Navbar.Brand>
+				</Link>
 				<Navbar.Content
 					enableCursorHighlight
 					css={{
