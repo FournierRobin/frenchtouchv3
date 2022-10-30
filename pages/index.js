@@ -3,9 +3,8 @@ import Hero from '../components/Hero'
 import TopNavbar from '../components/TopNavbar'
 import Services from '../components/Services'
 import Quote from '../components/Quote'
-import Portfolio from '../components/Portfolio'
+/* import Portfolio from '../components/Portfolio' */
 import Footer from '../components/Footer'
-import Flask from '../components/Flask'
 import { useState, useEffect, useRef } from 'react'
 import { styled } from '@nextui-org/react'
 
@@ -30,7 +29,8 @@ export default function Home() {
 	const [scrollY, setScrollY] = useState(0)
 	const [activeSection, setActiveSection] = useState('Home')
 
-	const [serviceClicked, setServiceClicked] = useState('')
+	const [serviceClicked, setServiceClicked] =
+		useState('Home Staging')
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -75,8 +75,14 @@ export default function Home() {
 			<TopNavbar activeSection={activeSection} />
 			<Hero homeRef={homeRef} />
 			{/* <Portfolio portfolioRef={portfolioRef} /> */}
-			<Services servicesRef={servicesRef} />
-			<Quote quoteRef={quoteRef} />
+			<Services
+				servicesRef={servicesRef}
+				setServiceClicked={setServiceClicked}
+			/>
+			<Quote
+				quoteRef={quoteRef}
+				serviceClicked={serviceClicked}
+			/>
 			<Footer />
 		</Layout>
 	)

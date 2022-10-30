@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, styled, Image } from '@nextui-org/react'
+import { Text, styled } from '@nextui-org/react'
 
 const Footer = () => {
 	return (

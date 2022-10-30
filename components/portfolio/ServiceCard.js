@@ -6,9 +6,8 @@ import {
 	Col,
 	Row,
 	Button,
+	Link,
 } from '@nextui-org/react'
-import { useHover } from 'react-aria'
-import { useState } from 'react'
 
 function wait(ms) {
 	var start = new Date().getTime()
@@ -19,10 +18,6 @@ function wait(ms) {
 }
 
 const ServiceCard = (props) => {
-	const passToQuote = (event) => {
-		console.log(props.name)
-	}
-
 	return (
 		<Card
 			className='flip-card-front'
@@ -83,22 +78,26 @@ const ServiceCard = (props) => {
 							{props.price}
 						</Text>
 					</Button>
-					<Button
-						flat
-						auto
-						rounded
-						onPress={passToQuote}
-						color='primary'
-					>
-						<Text
-							css={{ color: 'white' }}
-							size={20}
-							weight='bold'
-							transform='uppercase'
+					<Link href='#Quote'>
+						<Button
+							flat
+							auto
+							rounded
+							onPress={() =>
+								props.setServiceClicked(props.name)
+							}
+							color='primary'
 						>
-							Get a quote
-						</Text>
-					</Button>
+							<Text
+								css={{ color: 'white' }}
+								size={20}
+								weight='bold'
+								transform='uppercase'
+							>
+								Get a quote
+							</Text>
+						</Button>
+					</Link>
 				</Row>
 			</Card.Footer>
 		</Card>

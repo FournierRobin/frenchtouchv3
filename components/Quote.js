@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
 	Checkbox,
 	Button,
@@ -50,12 +50,12 @@ const quoteListP2 = [
 	},
 ]
 
-const Quote = ({ quoteRef }) => {
+const Quote = ({ quoteRef, serviceClicked }) => {
 	const [quoteForm, setQuoteForm] = useState({
 		familyName: '',
 		email: '',
 		phoneNumber: '',
-		typeOfServices: 'Home Staging',
+		typeOfServices: serviceClicked,
 		jobList: 'Realtor',
 		addPhotos: '',
 		propertyAdress: '',
@@ -83,6 +83,10 @@ const Quote = ({ quoteRef }) => {
 			/* console.log(data) */
 		})
 	}
+
+	useEffect(() => {
+		quoteForm.typeOfServices = serviceClicked
+	})
 
 	return (
 		<StyledDiv ref={quoteRef} id='Quote'>

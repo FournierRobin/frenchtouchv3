@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import {
 	Text,
 	styled,
@@ -35,7 +35,7 @@ const servicesList = [
 	},
 ]
 
-const Services = ({ servicesRef }) => {
+const Services = ({ servicesRef, setServiceClicked }) => {
 	useEffect(() => {
 		AOS.init()
 	}, [])
@@ -62,6 +62,7 @@ const Services = ({ servicesRef }) => {
 								description={service.description}
 								price={service.price}
 								photoSrc={service.photoSrc}
+								setServiceClicked={setServiceClicked}
 							/>
 						</Grid>
 					)
