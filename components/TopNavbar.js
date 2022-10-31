@@ -15,7 +15,11 @@ const section = [
 const TopNavbar = ({ activeSection }) => {
 	return (
 		<LayoutNavbar>
-			<StyledNavbar isBordered='true' variant='sticky'>
+			<StyledNavbar
+				isCompact
+				isBordered='true'
+				variant='sticky'
+			>
 				<Link href='#Home'>
 					<Navbar.Brand>
 						<Text b color='default' hideIn='xs'>

@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 import ModalMail from '../components/ModalMail'
 import { useState, useEffect, useRef } from 'react'
 import { styled, Button, Modal } from '@nextui-org/react'
+import UnderHero from '../components/UnderHero'
 
 export default function Home() {
 	const homeRef = useRef()
@@ -80,6 +81,7 @@ export default function Home() {
 			</Head>
 			<TopNavbar activeSection={activeSection} />
 			<Hero homeRef={homeRef} />
+			<UnderHero />
 			{/* <Portfolio portfolioRef={portfolioRef} /> */}
 			<Services
 				servicesRef={servicesRef}
@@ -96,6 +98,6 @@ export default function Home() {
 }
 
 const Layout = styled('div', {
-	width: '100%',
+	/* width: '100%', */
 	scrollBehavior: 'smooth',
 })

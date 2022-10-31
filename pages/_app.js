@@ -10,9 +10,9 @@ const theme = createTheme({
 	type: 'dark',
 	theme: {
 		fonts: {
-			sans: 'Libre Baskerville',
+			sans: 'Playfair Display',
 			/* Bienvenue: 'Playfair Display',
-			Reste: 'Palanquin', */
+			&: 'Encode Sans SC', */
 		},
 	},
 })
