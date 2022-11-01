@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
 	Navbar,
 	Text,
@@ -13,6 +13,11 @@ const section = [
 	{ name: 'Quote', href: '#Quote' },
 ]
 const TopNavbar = ({ activeSection }) => {
+	const [menuToggle, setMenuToggle] = useState('false')
+	const toggleTrue = () => {
+		console.log(menuToggle)
+		setMenuToggle('true')
+	}
 	return (
 		<LayoutNavbar>
 			<StyledNavbar
@@ -20,10 +25,14 @@ const TopNavbar = ({ activeSection }) => {
 				isBordered='true'
 				variant='sticky'
 			>
+				<Navbar.Toggle
+					showIn='xs'
+					aria-label='toggle navigation'
+				/>
 				<Link href='#Home'>
 					<Navbar.Brand>
-						<Text b color='default' hideIn='xs'>
-							THE FRENCH TOUCH
+						<Text b color='default'>
+							The French Touch Houston
 						</Text>
 					</Navbar.Brand>
 				</Link>
@@ -40,6 +49,7 @@ const TopNavbar = ({ activeSection }) => {
 						let isActive = activeSection == page.name
 						return (
 							<Navbar.Link
+								color='text'
 								isActive={isActive}
 								key={page.name}
 								href={page.href}
@@ -50,6 +60,23 @@ const TopNavbar = ({ activeSection }) => {
 					})}
 				</Navbar.Content>
 				<Navbar.Content></Navbar.Content>
+				<Navbar.Collapse>
+					{section.map((page) => {
+						return (
+							<Navbar.CollapseItem key={page.name}>
+								<Link
+									color='inherit'
+									css={{
+										minWidth: '100%',
+									}}
+									href={page.href}
+								>
+									{page.name}
+								</Link>
+							</Navbar.CollapseItem>
+						)
+					})}
+				</Navbar.Collapse>
 			</StyledNavbar>
 		</LayoutNavbar>
 	)

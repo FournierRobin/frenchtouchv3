@@ -24,8 +24,14 @@ export default function Home() {
 	const getPosition = () => {
 		setYhome(0)
 		/* setYport(portfolioRef.current.offsetTop) */
-		setYserv(servicesRef.current.offsetTop)
-		setYquote(quoteRef.current.offsetTop)
+
+		/* try catch ? */
+		try {
+			setYserv(servicesRef.current.offsetTop)
+		} catch {}
+		try {
+			setYquote(quoteRef.current.offsetTop)
+		} catch {}
 	}
 
 	const [scrollY, setScrollY] = useState(0)
@@ -81,7 +87,7 @@ export default function Home() {
 			</Head>
 			<TopNavbar activeSection={activeSection} />
 			<Hero homeRef={homeRef} />
-			<UnderHero />
+			{/* <UnderHero /> en attente */}
 			{/* <Portfolio portfolioRef={portfolioRef} /> */}
 			<Services
 				servicesRef={servicesRef}
@@ -91,6 +97,7 @@ export default function Home() {
 			<Quote
 				quoteRef={quoteRef}
 				serviceClicked={serviceClicked}
+				setServiceClicked={setServiceClicked}
 			/>
 			<Footer />
 		</Layout>

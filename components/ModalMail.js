@@ -44,7 +44,7 @@ const ModalMail = () => {
 			<Button
 				rounded
 				shadow
-				color='secondary'
+				color='text'
 				onPress={openModalHandler}
 				icon={<Message filled />}
 			>

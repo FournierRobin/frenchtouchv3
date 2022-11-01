@@ -6,7 +6,7 @@ const Hero = ({ homeRef }) => {
 		<StyledApp ref={homeRef} id='Home'>
 			<Overlay>
 				<HeroText css={{}} color='#ffffff' h1>
-					Bienvenue
+					BIENVENUE
 				</HeroText>
 			</Overlay>
 		</StyledApp>
@@ -35,11 +35,11 @@ const Overlay = styled('div', {
 })
 
 const HeroText = styled(Text, {
-	fontSize: '5em',
-	'@xs': { fontSize: '10em' },
-	'@sm': { fontSize: '12em' },
-	'@md': { fontSize: '14em' },
-	'@lg': { fontSize: '14em' },
+	fontSize: '4em',
+	'@xs': { fontSize: '8em' },
+	'@sm': { fontSize: '11em' },
+	'@md': { fontSize: '13em' },
+	'@lg': { fontSize: '13em' },
 })
 
 export default Hero

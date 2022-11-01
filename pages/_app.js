@@ -7,13 +7,17 @@ import styles from '../styles/globals.css'
 import '../styles/card.css'
 
 const theme = createTheme({
-	type: 'dark',
+	type: 'light',
 	theme: {
 		fonts: {
 			sans: 'Playfair Display',
 			/* Bienvenue: 'Playfair Display',
 			&: 'Encode Sans SC', */
 		},
+		/* colors: {
+			primaryLight: '$yellow200',
+			secondaryLight: '$blue200',
+		}, */
 	},
 })
 

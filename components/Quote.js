@@ -50,12 +50,16 @@ const quoteListP2 = [
 	},
 ]
 
-const Quote = ({ quoteRef, serviceClicked }) => {
+const Quote = ({
+	quoteRef,
+	serviceClicked,
+	setServiceClicked,
+}) => {
 	const [quoteForm, setQuoteForm] = useState({
 		familyName: '',
 		email: '',
 		phoneNumber: '',
-		typeOfServices: serviceClicked,
+		typeOfServices: 'Home Staging',
 		jobList: 'Realtor',
 		addPhotos: '',
 		propertyAdress: '',
@@ -116,12 +120,13 @@ const Quote = ({ quoteRef, serviceClicked }) => {
 						selectionMode='single'
 						name='typeOfServices'
 						selectedKeys={quoteForm.typeOfServices}
-						onSelectionChange={(event) =>
+						onSelectionChange={(event) => {
+							setServiceClicked(event.anchorKey)
 							setQuoteForm({
 								...quoteForm,
 								['typeOfServices']: event.anchorKey,
 							})
-						}
+						}}
 					>
 						{typeOfServicesList.map((service) => {
 							return (
@@ -142,6 +147,7 @@ const Quote = ({ quoteRef, serviceClicked }) => {
 						quoteForm.typeOfServices ==
 						'Photos And/Or Videos'
 					}
+					name='addPhotos'
 					defaultSelected={quoteForm.addPhotos}
 					size='xs'
 					onChange={(event) =>
@@ -151,7 +157,7 @@ const Quote = ({ quoteRef, serviceClicked }) => {
 						})
 					}
 				>
-					Add Photos and Videos
+					Add Photos and Videos (+$150)
 				</Checkbox>
 				<Spacer y={1.5} />
 
