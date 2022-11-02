@@ -47,6 +47,7 @@ const ModalMail = () => {
 				color='text'
 				onPress={openModalHandler}
 				icon={<Message filled />}
+				css={{ zIndex: '100' }}
 			>
 				Quick mail
 			</Button>

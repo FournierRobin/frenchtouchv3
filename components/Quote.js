@@ -7,6 +7,11 @@ import {
 	Input,
 	Spacer,
 	Dropdown,
+	Text,
+	Container,
+	Col,
+	Row,
+	Image,
 } from '@nextui-org/react'
 
 const typeOfServicesList = [
@@ -94,133 +99,221 @@ const Quote = ({
 
 	return (
 		<StyledDiv ref={quoteRef} id='Quote'>
-			<form onSubmit={sendForm}>
-				{quoteListP1.map((element) => {
-					return (
-						<div key={element.key}>
-							<Input
-								underlined
-								labelPlaceholder={element.placeholder}
-								name={element.key}
-								value={quoteForm[element.key]}
-								onChange={handleChange}
-							/>
-							<Spacer y={1.5} />
-						</div>
-					)
-				})}
-				<Dropdown>
-					<Dropdown.Button light flat>
-						{quoteForm.typeOfServices}
-					</Dropdown.Button>
-					<Dropdown.Menu
-						aria-label='Single selection actions'
-						color='secondary'
-						disallowEmptySelection
-						selectionMode='single'
-						name='typeOfServices'
-						selectedKeys={quoteForm.typeOfServices}
-						onSelectionChange={(event) => {
-							setServiceClicked(event.anchorKey)
-							setQuoteForm({
-								...quoteForm,
-								['typeOfServices']: event.anchorKey,
-							})
+			<Text
+				css={{
+					marginTop: '2rem',
+					fontSize: '4em',
+					color: '$blackColor',
+					paddingBottom: '1em',
+				}}
+				h1
+			>
+				Quote
+			</Text>
+			<Container>
+				<Row>
+					<Spacer
+						x={5}
+						css={{
+							display: 'none',
+							'@xs': { display: 'none' },
+							'@sm': {
+								display: 'flex',
+							},
+							'@md': {
+								display: 'flex',
+							},
+							'@lg': {
+								display: 'flex',
+							},
 						}}
-					>
-						{typeOfServicesList.map((service) => {
-							return (
-								<Dropdown.Item
-									key={service.key}
-									withDivider
+					/>
+					<Col>
+						<form onSubmit={sendForm}>
+							{quoteListP1.map((element) => {
+								return (
+									<div key={element.key}>
+										<Input
+											underlined
+											labelPlaceholder={element.placeholder}
+											name={element.key}
+											value={quoteForm[element.key]}
+											onChange={handleChange}
+										/>
+										<Spacer y={1.5} />
+									</div>
+								)
+							})}
+							<Dropdown>
+								<Dropdown.Button
+									color='blackColor'
+									light
+									flat
 								>
-									{service.key}
-								</Dropdown.Item>
-							)
-						})}
-					</Dropdown.Menu>
-				</Dropdown>
-				<Spacer y={1.5} />
-
-				<Checkbox
-					isDisabled={
-						quoteForm.typeOfServices ==
-						'Photos And/Or Videos'
-					}
-					name='addPhotos'
-					defaultSelected={quoteForm.addPhotos}
-					size='xs'
-					onChange={(event) =>
-						setQuoteForm({
-							...quoteForm,
-							['addPhotos']: event,
-						})
-					}
-				>
-					Add Photos and Videos (+$150)
-				</Checkbox>
-				<Spacer y={1.5} />
-
-				<Dropdown>
-					<Dropdown.Button light flat>
-						{quoteForm.jobList}
-					</Dropdown.Button>
-					<Dropdown.Menu
-						aria-label='Single selection actions'
-						color='secondary'
-						disallowEmptySelection
-						selectionMode='single'
-						name='jobList'
-						selectedKeys={quoteForm.jobList}
-						onSelectionChange={(event) =>
-							setQuoteForm({
-								...quoteForm,
-								['jobList']: event.anchorKey,
-							})
-						}
-					>
-						{jobList.map((service) => {
-							return (
-								<Dropdown.Item
-									key={service.key}
-									withDivider
+									{quoteForm.typeOfServices}
+								</Dropdown.Button>
+								<Dropdown.Menu
+									aria-label='Single selection actions'
+									color='blackColor'
+									disallowEmptySelection
+									selectionMode='single'
+									name='typeOfServices'
+									selectedKeys={quoteForm.typeOfServices}
+									onSelectionChange={(event) => {
+										setServiceClicked(event.anchorKey)
+										setQuoteForm({
+											...quoteForm,
+											['typeOfServices']: event.anchorKey,
+										})
+									}}
 								>
-									{service.key}
-								</Dropdown.Item>
-							)
-						})}
-					</Dropdown.Menu>
-				</Dropdown>
-				<Spacer y={1.5} />
-
-				{quoteListP2.map((element) => {
-					return (
-						<div key={element.key}>
-							<Input
-								underlined
-								labelPlaceholder={element.placeholder}
-								name={element.key}
-								value={quoteForm[element.key]}
-								onChange={handleChange}
-							/>
+									{typeOfServicesList.map((service) => {
+										return (
+											<Dropdown.Item
+												key={service.key}
+												withDivider
+											>
+												{service.key}
+											</Dropdown.Item>
+										)
+									})}
+								</Dropdown.Menu>
+							</Dropdown>
 							<Spacer y={1.5} />
-						</div>
-					)
-				})}
-				<Button auto type='submit'>
-					Submit Quote
-				</Button>
-			</form>
+
+							<Checkbox
+								isDisabled={
+									quoteForm.typeOfServices ==
+									'Photos And/Or Videos'
+								}
+								name='addPhotos'
+								defaultSelected={quoteForm.addPhotos}
+								size='xs'
+								onChange={(event) =>
+									setQuoteForm({
+										...quoteForm,
+										['addPhotos']: event,
+									})
+								}
+							>
+								Add Photos and Videos (+$150)
+							</Checkbox>
+							<Spacer y={1.5} />
+
+							<Dropdown>
+								<Dropdown.Button
+									color='blackColor'
+									light
+									flat
+								>
+									{quoteForm.jobList}
+								</Dropdown.Button>
+								<Dropdown.Menu
+									aria-label='Single selection actions'
+									color='blackColor'
+									disallowEmptySelection
+									selectionMode='single'
+									name='jobList'
+									selectedKeys={quoteForm.jobList}
+									onSelectionChange={(event) =>
+										setQuoteForm({
+											...quoteForm,
+											['jobList']: event.anchorKey,
+										})
+									}
+								>
+									{jobList.map((service) => {
+										return (
+											<Dropdown.Item
+												key={service.key}
+												withDivider
+											>
+												{service.key}
+											</Dropdown.Item>
+										)
+									})}
+								</Dropdown.Menu>
+							</Dropdown>
+							<Spacer y={1.5} />
+
+							{quoteListP2.map((element) => {
+								return (
+									<div key={element.key}>
+										<Input
+											underlined
+											labelPlaceholder={element.placeholder}
+											name={element.key}
+											value={quoteForm[element.key]}
+											onChange={handleChange}
+										/>
+										<Spacer y={1.5} />
+									</div>
+								)
+							})}
+							<Button auto color='blackColor' type='submit'>
+								Submit Quote
+							</Button>
+						</form>
+					</Col>
+					<Spacer
+						x={8}
+						css={{
+							display: 'none',
+							'@xs': { display: 'none' },
+							'@sm': {
+								display: 'flex',
+							},
+							'@md': {
+								display: 'flex',
+							},
+							'@lg': {
+								display: 'flex',
+							},
+						}}
+					/>
+					<StyledColImg>
+						<StyledImage
+							autoResize
+							src='/images/canape.png'
+							alt='img2'
+							objectFit='cover'
+						/>
+					</StyledColImg>
+				</Row>
+			</Container>
 		</StyledDiv>
 	)
 }
 
 const StyledDiv = styled('div', {
 	dflex: 'center',
+	flexDirection: 'column',
 	width: '100%',
-	/* height: '100vh', */
 	alignItems: 'center',
-	background: '$green500',
+	background: '$background',
+	padding: '2em',
+	marginBottom: '4em',
+	zIndex: '1',
+	'@xs': { display: 'flex', flexDirection: 'column' },
+	'@sm': { display: 'flex' },
+	'@md': { display: 'flex' },
+	'@lg': { display: 'flex' },
+})
+
+const StyledImage = styled(Image, {
+	display: 'none',
+	'@xs': { aspectRatio: '3/8', display: 'none' },
+	'@sm': { aspectRatio: '5/8', display: 'flex' },
+	'@md': { aspectRatio: '5/8', display: 'flex' },
+	'@lg': { aspectRatio: '5/8', display: 'flex' },
+})
+
+const StyledColImg = styled(Col, {
+	display: 'none',
+	'@xs': { display: 'none' },
+	'@sm': { display: 'flex' },
+	'@md': { display: 'flex' },
+	'@lg': { display: 'flex' },
 })
 
 export default Quote

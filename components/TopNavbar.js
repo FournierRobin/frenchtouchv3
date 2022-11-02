@@ -21,6 +21,7 @@ const TopNavbar = ({ activeSection }) => {
 	return (
 		<LayoutNavbar>
 			<StyledNavbar
+				disableBlur
 				isCompact
 				isBordered='true'
 				variant='sticky'
@@ -83,7 +84,7 @@ const TopNavbar = ({ activeSection }) => {
 }
 
 const StyledNavbar = styled(Navbar, {
-	/* maxWidth: 'xl', */
+	color: '$background',
 })
 
 const LayoutNavbar = styled('div', {

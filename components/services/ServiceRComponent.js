@@ -39,6 +39,7 @@ const ServiceRComponent = (props) => {
 				<Spacer x={1.5} />
 				<Col>
 					<Image
+						className='photo2'
 						width={400}
 						height={600}
 						src={props.services.photo1}
@@ -47,7 +48,14 @@ const ServiceRComponent = (props) => {
 					/>
 				</Col>
 				<Spacer x={1.5} />
-				<Col>
+				<Col
+					className='imageGetQuote'
+					css={{
+						display: 'flex',
+						alignItems: 'center',
+						flexDirection: 'column',
+					}}
+				>
 					<Image
 						width={400}
 						height={450}
@@ -62,7 +70,7 @@ const ServiceRComponent = (props) => {
 							props.setServiceClicked(props.services.name)
 						}
 					>
-						<Text h3>Get a quote</Text>
+						<Text h2>Get a quote</Text>
 						<Spacer x={1} />
 						<CaretRight
 							filled
@@ -78,7 +86,8 @@ const ServiceRComponent = (props) => {
 
 const StyledContainer = styled(Container, {
 	width: '100%',
-	paddingTop: '10em',
+	paddingTop: '7em',
+	paddingBottom: '3em',
 })
 
 const PaddedDiv = styled('div', {

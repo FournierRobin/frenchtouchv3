@@ -20,8 +20,15 @@ const info = {
 const ServiceLComponent = (props) => {
 	return (
 		<StyledContainer>
-			<Row>
-				<Col>
+			<Row className='containerLeftServices'>
+				<Col
+					className='imageGetQuote'
+					css={{
+						display: 'flex',
+						alignItems: 'center',
+						flexDirection: 'column',
+					}}
+				>
 					<Image
 						width={400}
 						height={450}
@@ -36,7 +43,7 @@ const ServiceLComponent = (props) => {
 							props.setServiceClicked(props.services.name)
 						}
 					>
-						<Text h3>Get a quote</Text>
+						<Text h2>Get a quote</Text>
 						<Spacer x={1} />
 						<CaretRight
 							filled
@@ -48,6 +55,7 @@ const ServiceLComponent = (props) => {
 				<Spacer x={1.5} />
 				<Col>
 					<Image
+						className='photo2'
 						width={400}
 						height={600}
 						src={props.services.photo2}
@@ -78,7 +86,10 @@ const ServiceLComponent = (props) => {
 
 const StyledContainer = styled(Container, {
 	width: '100%',
-	paddingTop: '10em',
+	paddingTop: '7em',
+	paddingBottom: '3em',
+	display: 'flex',
+	flexDirection: 'column',
 })
 
 const PaddedDiv = styled('div', {
@@ -87,6 +98,11 @@ const PaddedDiv = styled('div', {
 
 const StyledLink = styled(Link, {
 	borderBottom: '1px solid black',
+})
+
+const StyledImage = styled(Image, {
+	width: '400',
+	height: '600',
 })
 
 export default ServiceLComponent

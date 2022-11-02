@@ -46,12 +46,17 @@ const Services = ({ servicesRef, setServiceClicked }) => {
 	}, [])
 
 	return (
-		<StyledDiv ref={servicesRef} id='Services'>
+		<StyledDiv
+			ref={servicesRef}
+			id='Services'
+			className='serviceDiv'
+		>
 			<Text
 				css={{
 					marginTop: '2rem',
 					fontSize: '4em',
-					color: 'text',
+					color: '$blackColor',
+					textAlign: 'center',
 				}}
 				h1
 			>
@@ -79,7 +84,7 @@ const StyledDiv = styled('div', {
 	width: '100%',
 	padding: '4rem',
 	alignItems: 'center',
-	background: '$yellow200',
+	background: '$background',
 	flexDirection: 'column',
 })
 

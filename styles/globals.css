@@ -38,6 +38,38 @@ a {
   box-sizing: border-box;
 }
 
+
+
+@media (max-width: 1000px) {
+  .nextui-c-dfbgCO {
+    flex-direction: column;
+  }
+  .containerLeftServices {
+    flex-direction: column-reverse;
+  }  
+  .photo2 {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 550px) {
+  .serviceDiv {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 1000px) and (min-height: 750px){
+  .imageGetQuote {
+    flex-direction: row !important;
+  }
+}
+
+@media (max-width: 750px) {
+  .imageGetQuote {
+    flex-direction: column !important;
+  }
+}
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

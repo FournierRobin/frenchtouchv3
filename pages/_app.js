@@ -9,15 +9,19 @@ import '../styles/card.css'
 const theme = createTheme({
 	type: 'light',
 	theme: {
+		colors: {
+			background: '#FFF6F0',
+			primary: '#FFFFFF',
+			secondary: '$6785B4',
+			blueNav: '#6785B4',
+			whiteColor: '#FFFFFF',
+			blackColor: '#000000',
+		},
 		fonts: {
 			sans: 'Playfair Display',
 			/* Bienvenue: 'Playfair Display',
 			&: 'Encode Sans SC', */
 		},
-		/* colors: {
-			primaryLight: '$yellow200',
-			secondaryLight: '$blue200',
-		}, */
 	},
 })
 
