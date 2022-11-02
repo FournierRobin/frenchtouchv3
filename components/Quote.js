@@ -190,6 +190,7 @@ const Quote = ({
 									quoteForm.typeOfServices ==
 									'Photos And/Or Videos'
 								}
+								color='primary'
 								name='addPhotos'
 								defaultSelected={quoteForm.addPhotos}
 								size='xs'
@@ -254,7 +255,7 @@ const Quote = ({
 									</div>
 								)
 							})}
-							<Button auto color='blackColor' type='submit'>
+							<Button auto color='secondary' type='submit'>
 								Submit Quote
 							</Button>
 						</form>
