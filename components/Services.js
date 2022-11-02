@@ -35,7 +35,7 @@ const servicesList = [
 		description:
 			'See the difference professional photography can make to your listing and to the image it portray to futur buyers. You can also enhance your buyers experience by adding a full tour of your house with our video service.',
 		price: '$250+',
-		photo1: '/images/bedroomplant.png',
+		photo1: '/images/tapispiano.png',
 		photo2: '/images/photograph2.png',
 	},
 ]

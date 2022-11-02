@@ -8,7 +8,7 @@ body {
 
 .nextui-navbar-container {
   max-width: 100% !important;
-  background: #fff6f0 !important;
+  background: #bfbab7 !important;
 }
 
 .nextui-dropdown-menu {
@@ -16,13 +16,23 @@ body {
 }
 
 .nextui-input-main-container {
-  display: flex !important;
+  display: flex !important; 
 }
+
+.nextui-input-main-container  {
+  z-index: 0;
+}
+.nextui-checkbox-label {z-index: 0 !important;}
+.nextui-dropdown-button{z-index: 0;}
 
 .modal-mail {
   position: fixed;
   bottom: 10px;
   right: 10px;
+}
+
+.nextui-button {
+  z-index: 0;
 }
 
 form { 
@@ -38,20 +48,20 @@ a {
 * {
   box-sizing: border-box;
 }
+@media (max-width: 1279px) {
+  .photo2 {
+    display: none;
+  }
+}
 
 
-
-@media (max-width: 1000px) {
+@media (max-width: 959px) {
   .nextui-c-dfbgCO {
     flex-direction: column;
   }
   .containerLeftServices {
     flex-direction: column-reverse;
   }  
-  .photo2 {
-    display: none;
-  }
-  
 }
 
 @media (max-width: 550px) {
@@ -60,7 +70,7 @@ a {
   }
 }
 
-@media (max-width: 1000px) and (min-height: 750px){
+@media (max-width: 959px) and (min-height: 750px){
   .imageGetQuote {
     flex-direction: row !important;
   }

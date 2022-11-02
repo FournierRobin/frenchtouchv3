@@ -98,7 +98,11 @@ const Quote = ({
 	})
 
 	return (
-		<StyledDiv ref={quoteRef} id='Quote'>
+		<StyledDiv
+			ref={quoteRef}
+			id='Quote'
+			className='quoteDiv'
+		>
 			<Text
 				css={{
 					marginTop: '2rem',
@@ -256,7 +260,7 @@ const Quote = ({
 						</form>
 					</Col>
 					<Spacer
-						x={8}
+						x={6}
 						css={{
 							display: 'none',
 							'@xs': { display: 'none' },
@@ -273,8 +277,8 @@ const Quote = ({
 					/>
 					<StyledColImg>
 						<StyledImage
-							autoResize
-							src='/images/canape.png'
+							className='imageQuote'
+							src='/images/tapispiano2.png'
 							alt='img2'
 							objectFit='cover'
 						/>
@@ -293,7 +297,6 @@ const StyledDiv = styled('div', {
 	background: '$background',
 	padding: '2em',
 	marginBottom: '4em',
-	zIndex: '1',
 	'@xs': { display: 'flex', flexDirection: 'column' },
 	'@sm': { display: 'flex' },
 	'@md': { display: 'flex' },
@@ -302,8 +305,8 @@ const StyledDiv = styled('div', {
 
 const StyledImage = styled(Image, {
 	display: 'none',
-	'@xs': { aspectRatio: '3/8', display: 'none' },
-	'@sm': { aspectRatio: '5/8', display: 'flex' },
+	'@xs': { display: 'none' },
+	'@sm': { aspectRatio: '4/8', display: 'flex' },
 	'@md': { aspectRatio: '5/8', display: 'flex' },
 	'@lg': { aspectRatio: '5/8', display: 'flex' },
 })

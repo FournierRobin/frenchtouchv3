@@ -93,12 +93,13 @@ export default function Home() {
 				servicesRef={servicesRef}
 				setServiceClicked={setServiceClicked}
 			/>
-			<ModalMail />
+
 			<Quote
 				quoteRef={quoteRef}
 				serviceClicked={serviceClicked}
 				setServiceClicked={setServiceClicked}
 			/>
+			<ModalMail />
 			<Footer />
 		</Layout>
 	)

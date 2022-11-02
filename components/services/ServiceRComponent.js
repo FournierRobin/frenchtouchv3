@@ -27,7 +27,7 @@ const ServiceRComponent = (props) => {
 
 	return (
 		<StyledContainer>
-			<Row>
+			<Row css={{ padding: '0' }}>
 				<Col
 					css={{
 						borderLeft: '1px solid black',
@@ -46,9 +46,8 @@ const ServiceRComponent = (props) => {
 					</PaddedDiv>
 				</Col>
 				<Spacer x={1.5} />
-				<Col>
+				<Col className='photo2'>
 					<Image
-						className='photo2'
 						width={400}
 						height={600}
 						src={props.services.photo1}

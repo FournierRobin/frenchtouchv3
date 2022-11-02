@@ -11,7 +11,7 @@ const theme = createTheme({
 	theme: {
 		colors: {
 			background: '#FFF6F0',
-			primary: '#FFFFFF',
+			primary: '#000000',
 			secondary: '#6785B4',
 			blueNav: '#6785B4',
 			whiteColor: '#FFFFFF',

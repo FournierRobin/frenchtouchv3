@@ -53,9 +53,8 @@ const ServiceLComponent = (props) => {
 					</StyledLink>
 				</Col>
 				<Spacer x={1.5} />
-				<Col>
+				<Col className='photo2'>
 					<Image
-						className='photo2'
 						width={400}
 						height={600}
 						src={props.services.photo2}
@@ -100,11 +99,6 @@ const PaddedDiv = styled('div', {
 
 const StyledLink = styled(Link, {
 	borderBottom: '1px solid black',
-})
-
-const StyledImage = styled(Image, {
-	width: '400',
-	height: '600',
 })
 
 export default ServiceLComponent
