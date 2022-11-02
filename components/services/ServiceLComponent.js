@@ -74,7 +74,9 @@ const ServiceLComponent = (props) => {
 							{props.services.name}.
 						</Text>
 						<Spacer y={2} />
-						<Text h3>{props.services.description}</Text>
+						<Text h3 css={{ textAlign: 'justify' }}>
+							{props.services.description}
+						</Text>
 						<Spacer y={2} />
 						<Text h2>{props.services.price}</Text>
 					</PaddedDiv>

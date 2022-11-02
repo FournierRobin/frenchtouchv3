@@ -65,7 +65,7 @@ const Quote = ({
 		email: '',
 		phoneNumber: '',
 		typeOfServices: 'Home Staging',
-		jobList: 'Realtor',
+		jobList: 'Who are you...',
 		addPhotos: '',
 		propertyAdress: '',
 		estimatedListPrice: '',

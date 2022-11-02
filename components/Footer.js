@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, styled } from '@nextui-org/react'
+import { Text, styled, Image } from '@nextui-org/react'
 
 const Footer = () => {
 	return (
@@ -7,8 +7,6 @@ const Footer = () => {
 			<Text
 				size={60}
 				css={{
-					textGradient:
-						'45deg, $yellow600 -20%, $cyan800 100%',
 					paddingRight: '0.2rem',
 				}}
 				h1
@@ -24,7 +22,7 @@ const StyledDiv = styled('div', {
 	width: '100%',
 	height: '40vh',
 	alignItems: 'center',
-	background: '$purple500',
+	background: '#6785B4',
 })
 
 export default Footer

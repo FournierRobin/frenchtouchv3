@@ -8,6 +8,7 @@ body {
 
 .nextui-navbar-container {
   max-width: 100% !important;
+  background: #fff6f0 !important;
 }
 
 .nextui-dropdown-menu {

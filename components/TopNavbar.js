@@ -41,6 +41,7 @@ const TopNavbar = ({ activeSection }) => {
 					enableCursorHighlight
 					css={{
 						gap: '3rem',
+						marginRight: '6em',
 					}}
 					hideIn='xs'
 					variant='underline-rounded'
@@ -60,7 +61,6 @@ const TopNavbar = ({ activeSection }) => {
 						)
 					})}
 				</Navbar.Content>
-				<Navbar.Content></Navbar.Content>
 				<Navbar.Collapse>
 					{section.map((page) => {
 						return (
@@ -83,9 +83,7 @@ const TopNavbar = ({ activeSection }) => {
 	)
 }
 
-const StyledNavbar = styled(Navbar, {
-	color: '$background',
-})
+const StyledNavbar = styled(Navbar, {})
 
 const LayoutNavbar = styled('div', {
 	position: 'fixed',

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import {
 	Text,
 	Image,
@@ -10,6 +11,8 @@ import {
 	Link,
 } from '@nextui-org/react'
 import { CaretRight } from 'react-iconly'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const info = {
 	title: 'Home Staging',
@@ -18,6 +21,10 @@ const info = {
 }
 
 const ServiceRComponent = (props) => {
+	useEffect(() => {
+		AOS.init()
+	}, [])
+
 	return (
 		<StyledContainer>
 			<Row>
@@ -31,7 +38,9 @@ const ServiceRComponent = (props) => {
 							{props.services.name}.
 						</Text>
 						<Spacer y={2} />
-						<Text h3>{props.services.description}</Text>
+						<Text h3 css={{ textAlign: 'justify' }}>
+							{props.services.description}
+						</Text>
 						<Spacer y={2} />
 						<Text h2>{props.services.price}</Text>
 					</PaddedDiv>

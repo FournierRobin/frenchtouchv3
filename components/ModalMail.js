@@ -42,9 +42,7 @@ const ModalMail = () => {
 	return (
 		<div className='modal-mail'>
 			<Button
-				rounded
-				shadow
-				color='text'
+				color='secondary'
 				onPress={openModalHandler}
 				icon={<Message filled />}
 				css={{ zIndex: '100' }}
@@ -89,7 +87,11 @@ const ModalMail = () => {
 						/>
 					</Modal.Body>
 					<Modal.Footer css={{ justifyContent: 'center' }}>
-						<Button icon={<Send filled />} type='submit'>
+						<Button
+							color='secondary'
+							icon={<Send filled />}
+							type='submit'
+						>
 							Send message
 						</Button>
 					</Modal.Footer>

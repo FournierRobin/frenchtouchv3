@@ -12,7 +12,7 @@ const theme = createTheme({
 		colors: {
 			background: '#FFF6F0',
 			primary: '#FFFFFF',
-			secondary: '$6785B4',
+			secondary: '#6785B4',
 			blueNav: '#6785B4',
 			whiteColor: '#FFFFFF',
 			blackColor: '#000000',

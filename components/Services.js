@@ -18,7 +18,7 @@ const servicesList = [
 		name: 'Home Staging',
 		description:
 			'With professional home staging you can transform your house into a home from the moment the potential buyer steps in. This service is for vacant and model home.',
-		price: '$1850 + 2 months staging',
+		price: '$1850+ 2 months staging',
 		photo1: '/images/entryway.png',
 		photo2: '/images/dinnertable.png',
 	},

@@ -1,11 +1,23 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { Text, styled } from '@nextui-org/react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Hero = ({ homeRef }) => {
+	useEffect(() => {
+		AOS.init()
+	}, [])
 	return (
 		<StyledApp ref={homeRef} id='Home'>
 			<Overlay>
-				<HeroText css={{}} color='#ffffff' h1>
+				<HeroText
+					data-aos='fade-zoom-in'
+					data-aos-duration='1500'
+					data-aos-easing='ease-in-sine'
+					color='#FFF6F0'
+					h1
+				>
 					BIENVENUE
 				</HeroText>
 			</Overlay>
