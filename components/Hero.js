@@ -13,7 +13,7 @@ const Hero = ({ homeRef }) => {
 			<Overlay>
 				<HeroText
 					data-aos='fade-zoom-in'
-					data-aos-duration='1500'
+					data-aos-duration='1400'
 					data-aos-easing='ease-in-sine'
 					color='#FFF6F0'
 					h1
