@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --max-old-space-size=1024",
-    "build": "next build --max-old-space-size=1024",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "start-api": "cd api && apivenv/bin/flask run"
