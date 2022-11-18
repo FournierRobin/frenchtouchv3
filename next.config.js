@@ -22,3 +22,9 @@ module.exports = () => {
 		rewrites,
 	}
 }
+
+module.exports = {
+	typescript: {
+	  ignoreBuildErrors: true,
+	},
+  }
