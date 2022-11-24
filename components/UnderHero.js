@@ -31,22 +31,25 @@ const UnderHero = () => {
 						borderLeft: '1px solid black',
 						paddingLeft: '2em',
 						paddingRight: '2em',
+						justifyContent: 'center',
+						flexDirection: 'column',
+						display: 'flex'
 					}} >
 						<Row>
-							<Text color='#000000' h1>
+							<Text color='#000000' h1 className='UHtext1'>
 								Want to sell your property faster at top
 								dollar? <br />
 							</Text>
 							</Row>
 							<Row>
-							<Text color='#000000' h2>
+							<Text color='#000000' h2 className='UHtext2'>
 								The French Touch is here for you ! <br />
 								From photography to staging, let us
 								transform your House into a Home.
 							</Text>
 						</Row>
 						<Row>
-							<Text color='#000000' h3>
+							<Text color='#000000' h3 className='UHtext3'>
 								We, Nausicaa and Morgane, two French natives
 								living in Texas,
 								<br /> will bring to your home the casual
