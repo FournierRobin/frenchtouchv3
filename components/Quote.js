@@ -294,6 +294,7 @@ const StyledDiv = styled('div', {
 	dflex: 'center',
 	flexDirection: 'column',
 	width: '100%',
+	height: '100vh',
 	alignItems: 'center',
 	background: '$background',
 	padding: '2em',

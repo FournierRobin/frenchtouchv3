@@ -81,6 +81,7 @@ const StyledDiv = styled('div', {
 	justifyContent: 'flex-start',
 	width: '100%',
 	padding: '4rem',
+	paddingBottom: '0rem',
 	alignItems: 'center',
 	background: '$background',
 	flexDirection: 'column',
