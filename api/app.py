@@ -4,17 +4,18 @@ from flask_mail import Mail, Message
 import sys
 import mdp
 from flask import render_template
+import os
 
 
 app = Flask(__name__)
 
 mail_settings = {
-    "MAIL_SERVER": 'smtp.gmail.com',
-    "MAIL_PORT": 465,
+    "MAIL_SERVER": os.environ['server_smtp'],
+    "MAIL_PORT": os.environ['server_port'],
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": 'thefrenchtouch.quotemail@gmail.com',
-    "MAIL_PASSWORD": mdp.mdp  # A CACHER
+    "MAIL_USERNAME": os.environ['mail_username'],
+    "MAIL_PASSWORD": os.environ['mail_mdp']  # A CACHER
 }
 
 app.config.update(mail_settings)

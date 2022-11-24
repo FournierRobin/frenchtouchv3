@@ -279,7 +279,7 @@ const Quote = ({
 					<StyledColImg>
 						<StyledImage
 							className='imageQuote'
-							src='/images/tapispiano2.png'
+							src='/images/tapispiano2.webp'
 							alt='img2'
 							objectFit='cover'
 						/>

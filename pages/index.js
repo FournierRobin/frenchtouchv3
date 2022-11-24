@@ -87,7 +87,7 @@ export default function Home() {
 			</Head>
 			<TopNavbar activeSection={activeSection} />
 			<Hero homeRef={homeRef} />
-			{/* <UnderHero /> en attente */}
+			<UnderHero />
 			{/* <Portfolio portfolioRef={portfolioRef} /> */}
 			<Services
 				servicesRef={servicesRef}

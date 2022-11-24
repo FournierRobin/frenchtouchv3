@@ -32,7 +32,7 @@ const StyledApp = styled('div', {
 	width: '100%',
 	height: '100vh',
 	alignItems: 'center',
-	background: 'url("images/buffet.png")',
+	background: 'url("images/buffet.webp")',
 	backgroundSize: 'cover',
 	backgroundPosition: 'top center',
 })

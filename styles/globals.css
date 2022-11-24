@@ -2,8 +2,8 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden; 
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .nextui-navbar-container {
@@ -16,14 +16,20 @@ body {
 }
 
 .nextui-input-main-container {
-  display: flex !important; 
+  display: flex !important;
 }
 
-.nextui-input-main-container  {
+.nextui-input-main-container {
   z-index: 0;
 }
-.nextui-checkbox-label {z-index: 0 !important;}
-.nextui-dropdown-button{z-index: 0;}
+
+.nextui-checkbox-label {
+  z-index: 0 !important;
+}
+
+.nextui-dropdown-button {
+  z-index: 0;
+}
 
 .modal-mail {
   position: fixed;
@@ -35,7 +41,7 @@ body {
   z-index: 0;
 }
 
-form { 
+form {
   min-width: 50%;
 }
 
@@ -48,6 +54,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
 @media (max-width: 1279px) {
   .photo2 {
     display: none;
@@ -59,20 +66,63 @@ a {
   .nextui-c-dfbgCO {
     flex-direction: column;
   }
+
   .containerLeftServices {
     flex-direction: column-reverse;
-  }  
+  }
+
+  .nextui-c-kxDYOz {
+    padding-right: 4em !important;
+    padding-left: 4em !important;
+  }
+
+  .imgunderhome {
+    padding-right: 2em !important;
+  }
 }
 
 @media (max-width: 550px) {
   .serviceDiv {
     padding: 1rem !important;
   }
+
+  .nextui-c-kxDYOz {
+    padding-right: 1em !important;
+    padding-left: 1em !important;
+  }
+
+  .nextui-c-jsUxlp {
+    padding-left: 1em !important;
+    width: 70% !important;
+  }
+
+  .nextui-c-kLPjGB {
+    padding-right: 1em !important;
+    width: 30% !important;
+  }
+
+  .footertextmail {
+    font-size: small !important;
+  }
 }
 
-@media (max-width: 959px) and (min-height: 750px){
+@media (max-width: 959px) and (min-height: 750px) {
   .imageGetQuote {
     flex-direction: row !important;
+  }
+
+  .nextui-c-jsUxlp {
+    padding-left: 1em !important;
+    width: 70% !important;
+  }
+
+  .nextui-c-kLPjGB {
+    padding-right: 1em !important;
+    width: 30% !important;
+  }
+
+  .footertextmail {
+    font-size: x-large;
   }
 }
 
@@ -80,13 +130,8 @@ a {
   .imageGetQuote {
     flex-direction: column !important;
   }
+
+  .footertextmail {
+    font-size: large;
+  }
 }
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */

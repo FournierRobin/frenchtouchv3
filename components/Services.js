@@ -4,9 +4,7 @@ import {
 	Text,
 	styled,
 	Grid,
-	Button,
 } from '@nextui-org/react'
-import ServiceCard from './services/ServiceCard'
 import ServiceRComponent from './services/ServiceRComponent'
 import ServiceLComponent from './services/ServiceLComponent'
 
@@ -19,24 +17,24 @@ const servicesList = [
 		description:
 			'With professional home staging you can transform your house into a home from the moment the potential buyer steps in. This service is for vacant and model home.',
 		price: '$1850+ 2 months staging',
-		photo1: '/images/entryway.png',
-		photo2: '/images/dinnertable.png',
+		photo1: '/images/entryway.webp',
+		photo2: '/images/dinnertable.webp',
 	},
 	{
 		name: 'Interior Redesign Stylist',
 		description:
 			'The house is still occupied but you want it to look good for futur buyers? We will come in and help you rearrange and declutter your home. Our goal is to increase the potential of your home on the market.',
 		price: '$800+',
-		photo1: '/images/dinnertable2.png',
-		photo2: '/images/livingroomkitchen.png',
+		photo1: '/images/dinnertable2.webp',
+		photo2: '/images/livingroomkitchen.webp',
 	},
 	{
 		name: 'Photos And/Or Videos',
 		description:
 			'See the difference professional photography can make to your listing and to the image it portray to futur buyers. You can also enhance your buyers experience by adding a full tour of your house with our video service.',
 		price: '$250+',
-		photo1: '/images/tapispiano.png',
-		photo2: '/images/photograph2.png',
+		photo1: '/images/tapispiano.webp',
+		photo2: '/images/photograph2.webp',
 	},
 ]
 
@@ -86,10 +84,6 @@ const StyledDiv = styled('div', {
 	alignItems: 'center',
 	background: '$background',
 	flexDirection: 'column',
-})
-
-const StyledGridContainer = styled(Grid.Container, {
-	height: '150vh',
 })
 
 export default Services
