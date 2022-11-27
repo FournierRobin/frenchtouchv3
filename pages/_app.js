@@ -16,11 +16,6 @@ const theme = createTheme({
 			whiteColor: '#FFFFFF',
 			blackColor: '#000000',
 		},
-		fonts: {
-			sans: 'Playfair Display',
-			/* Bienvenue: 'Playfair Display',
-			&: 'Encode Sans SC', */
-		},
 	},
 })
 
