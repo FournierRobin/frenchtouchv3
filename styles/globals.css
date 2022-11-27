@@ -55,30 +55,24 @@ a {
   box-sizing: border-box;
 }
 
+.divimgunderhome {
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 1279px) {
   .photo2 {
     display: none;
   }
 }
 
-@media (min-width: 2000px) {
-  .UHtext1 {
-    font-size: 40px;
-  }
-
-  .UHtext2 {
-    font-size: 40px;
-  }
-
-  .UHtext3 {
-    font-size: 40px;
-  }
-}
-
-
 @media (max-width: 959px) {
   .nextui-c-dfbgCO {
     flex-direction: column;
+  }
+
+  .divimgunderhome {
+    max-height: 50%;
   }
 
   .containerLeftServices {
@@ -127,7 +121,6 @@ a {
   .footertextmail {
     font-size: small !important;
   }
-
 }
 
 @media (max-width: 959px) and (min-height: 750px) {

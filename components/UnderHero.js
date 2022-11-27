@@ -2,30 +2,35 @@ import React from 'react'
 import {
 	Text,
 	styled,
-	Image,
 	Row,
 	Spacer,
 	Grid,
 	Col,
 } from '@nextui-org/react'
+import Image from 'next/image'
 
 const UnderHero = () => {
 	return (
 		<StyledApp id='UnderHome'>
 			<Grid.Container>
-				<Grid sm={5}>
-					<Image
-						src='/images/windowlamp.webp'
-						objectFit='cover'
-						alt='Window Lamp'
-						css={{
-							paddingLeft: '2em',
-						}}
-						className='imgunderhome'
-					/>
+				<Grid xs={12} sm={5}>
+					<div className='divimgunderhome' >
+						<Image
+							className='imgunderhome'
+							src='/images/windowlamp.webp'
+							objectFit='cover'
+							alt='Window Lamp'
+							width={500}
+							height={700}
+							layout='responsive'
+							sizes="(max-width: 768px) 100vw,
+							(max-width: 1200px) 50vw,
+							33vw"
+						/>
+					</div>
 				</Grid>
-				<Spacer x={2} />
-				<Grid sm={5}>
+				<Spacer x={2} className='spacerunderhome' />
+				<Grid xs={12} sm={5}>
 					<Col
 					css={{
 						borderLeft: '1px solid black',

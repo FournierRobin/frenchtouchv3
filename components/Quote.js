@@ -114,8 +114,8 @@ const Quote = ({
 			>
 				Quote
 			</Text>
-			<Container>
-				<Row>
+			<Container >
+				<Row css={{height: '70vh'}}>
 					<Spacer
 						x={5}
 						css={{
@@ -276,13 +276,13 @@ const Quote = ({
 							},
 						}}
 					/>
-					<StyledColImg>
-						<StyledImage
-							className='imageQuote'
-							src='/images/tapispiano2.webp'
-							alt='img2'
-							objectFit='cover'
-						/>
+					<StyledColImg css= {{
+						background: 'url("images/tapispiano2.webp")', 
+						height: '100%',
+						backgroundPosition: 'center center',
+						backgroundRepeat: 'no-repeat',
+						backgroundSize: 'cover'
+					}}>
 					</StyledColImg>
 				</Row>
 			</Container>
